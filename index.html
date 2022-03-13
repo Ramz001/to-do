@@ -1,36 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Todo app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/public/tailwind.css" />
 
-  Todo
 
-  <!-- Add dynamic number --> items left
+<style>
+.bla::before{
+  content: "";
+  position: absolute;
+  margin-top: 8px;
+  left: 8px;  
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  outline:  hsl(233, 11%, 84%) solid 1px;
+}
 
-  All
-  Active 
-  Completed
+</style>
 
-  Clear Completed
 
-  Drag and drop to reorder list
+    <title>Todo app</title>
+  </head>
+  <body>
+    <main
+      class="font-main flex flex-col bg-light-veryLightGray items-center dark:bg-dark-veryDarkBlue h-full"
+    >
+      <div class="bg-image"></div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="self-center z-10 relative w-[40%]">
+        <div class="flex justify-between mt-8 mb-4 items-center">
+          <h1 class="text-5xl uppercase text-white">Todo</h1>
+          <img src="images/icon-moon.svg" alt="moon" class="hidden logo" />
+          <img src="images/icon-sun.svg" alt="sun" class="logo" />
+        </div>
+        <div class="bla">
+          <input
+            type="text"
+            name="input"
+            id="input"
+            placeholder="create a new todo..."
+            class="w-[100%] h-10 rounded-md pl-10 text-lg"
+          />
+        </div>
+        <div class="rounded mt-4 bg-light-veryLightGray">
+          <!--input item-->
+          <div data-todo class="h-10 flex items-center px-2 justify-between">
+            <div class="flex gap-4">
+              <div id="completed" class="checkbox">
+                <img
+                  src="/images/icon-check.svg"
+                  alt="logo"
+                  class="w-3 h-2 mx-1"
+                />
+              </div>
+              <p class="text-light-veryDarkGrayishBlue">clean home</p>
+            </div>
+            <img
+              src="/images/icon-cross.svg"
+              alt="img"
+              class="flex items-end"
+            />
+          </div>
+
+          <!--/ input item-->
+          <div
+            class="flex justify-between border-t text-light-darkGrayishBlue border-light-veryDarkGrayishBlue h-8 items-center px-2"
+          >
+            <div class="text-sm">
+              <span id="items-number">n</span> items left
+            </div>
+            <div class="flex gap-4  cursor-pointer">
+              <div data-all class="text-sm hover:text-light-veryDarkGrayishBlue">All</div>
+              <div data-active class="text-sm hover:text-light-veryDarkGrayishBlue">Active</div>
+              <div data-completed class="text-sm hover:text-light-veryDarkGrayishBlue">Completed</div>
+            </div>
+            <div data-clear-completed class="text-sm hover:text-light-veryDarkGrayishBlue cursor-pointer">Clear Completed</div>
+          </div>
+        </div>
+        <!--wrapper-->
+      </div>
+
+      <footer class="attribution">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          class="text-blue-600 no-underline"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/Ramz001" class="text-blue-600">Ramz001</a>.
+      </footer>
+    </main>
+    <script src="/src/script.js"></script>
+  </body>
 </html>
