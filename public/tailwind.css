@@ -534,6 +534,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-right-color: hsl(280 87% 65% / var(--tw-border-opacity));
 }
 
+.checked{
+  --tw-text-opacity: 1;
+  color: hsl(233 11% 84% / var(--tw-text-opacity));
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+  -webkit-text-decoration-color: hsl(236, 9%, 61%);
+          text-decoration-color: hsl(236, 9%, 61%);
+}
+
 .relative{
   position: relative;
 }
@@ -631,10 +640,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.25rem;
 }
 
-.border{
-  border-width: 1px;
-}
-
 .border-t{
   border-top-width: 1px;
 }
@@ -652,14 +657,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.pl-2{
-  padding-left: 0.5rem;
-}
-
-.pl-8{
-  padding-left: 2rem;
 }
 
 .pl-10{
@@ -694,14 +691,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-blue-600{
+.text-light-veryDarkGrayishBlue{
   --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity));
-}
-
-.text-dark-darkGrayishBlue{
-  --tw-text-opacity: 1;
-  color: hsl(234 11% 52% / var(--tw-text-opacity));
+  color: hsl(235 19% 35% / var(--tw-text-opacity));
 }
 
 .text-light-darkGrayishBlue{
@@ -709,9 +701,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: hsl(236 9% 61% / var(--tw-text-opacity));
 }
 
-.text-light-veryDarkGrayishBlue{
+.text-blue-600{
   --tw-text-opacity: 1;
-  color: hsl(235 19% 35% / var(--tw-text-opacity));
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.line-through{
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
 }
 
 .no-underline{
@@ -719,13 +716,19 @@ Ensure the default browser behavior of the `hidden` attribute.
           text-decoration-line: none;
 }
 
+.decoration-light-darkGrayishBlue{
+  -webkit-text-decoration-color: hsl(236, 9%, 61%);
+          text-decoration-color: hsl(236, 9%, 61%);
+}
+
 .outline{
   outline-style: solid;
 }
 
-.hover\:text-light-darkGrayishBlue:hover{
-  --tw-text-opacity: 1;
-  color: hsl(236 9% 61% / var(--tw-text-opacity));
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .hover\:text-light-veryDarkGrayishBlue:hover{

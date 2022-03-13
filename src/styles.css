@@ -23,4 +23,7 @@ body,html{
         overflow-hidden from-gradientStart to-gradientEnd flex items-center 
         transition-colors border-light-lightGrayishBlue
     }
+    .checked{
+        @apply line-through decoration-light-darkGrayishBlue text-light-lightGrayishBlue
+    }
 }
