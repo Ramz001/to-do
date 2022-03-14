@@ -16,17 +16,19 @@ itemsNumber.textContent = 0
 lightBtn.addEventListener("click", themeToggle);
 darkBtn.addEventListener("click", themeToggle);
 allFilter.addEventListener("click",allFilterElements)
+activeFilter.addEventListener('click',activeFilterElements)
+completedFilter.addEventListener('click',completedFilterElements)
 input.addEventListener("keyup", addItem);
 
 function addItem(event) {
-  let value = input.value;
+  let value = input.value; 
 
   if (event.keyCode === 13) {
     const element = document.createElement("div");
     element.innerHTML = `
-        <div data-todo class="h-10 flex items-center px-2 justify-between">
-          <div class="flex gap-4 text-light-darkGrayishBlue
-          hover:text-light-veryDarkGrayishBlue cursor-pointer">
+        <div data-todo class="h-12 flex items-center px-2 justify-between shadow-md rounded-md">
+          <div class="flex gap-4 dark:text-dark-lightGrayishBlue
+          text-light-veryDarkGrayishBlue">
             <div id="completed" class="checkbox">
                 <img
                 src="/images/icon-check.svg"
@@ -41,11 +43,16 @@ function addItem(event) {
           src="/images/icon-cross.svg"
           alt="img"
           id="cross"
-          class="flex items-end cross-hover"
+          class="flex items-end cursor-pointer"
           />
         </div>`;
     //appeding element 
     inputItems.appendChild(element);
+    if(inputItems.childElementCount > 1){
+      element.classList.add("border-t")
+      element.classList.add("border-light-veryDarkGrayishBlue")
+      element.classList.add("dark:border-dark-darkGrayishBlue")
+    }
 
     const checkbox = element.querySelector(".checkbox");
     const cross = element.querySelector("#cross")
@@ -61,7 +68,14 @@ function addItem(event) {
     //eventListener
     clearCompleted.addEventListener('click',clearCompletedElements)
     // filters' event listener  
-
+    function activeElements(){
+      if(!element.dataset.active){
+        element.setAttribute("data-active",'active')
+      }else{
+        element.removeAttribute("data-active")
+      }
+    }
+    activeElements()
     clear()
   }
 }
@@ -86,7 +100,9 @@ function itemChecked(e){
   //sets data attribute to all todos that are completed
   if(!container.dataset.completed){
     container.setAttribute("data-completed",'completed')
+    container.removeAttribute("data-active")
   }else{
+    container.setAttribute("data-active",'active')
     container.removeAttribute("data-completed")
   }
   checkbox.classList.toggle("bg-gradient-to-br")
@@ -105,10 +121,39 @@ function clearCompletedElements(){
     inputItems.removeChild(element)
   })
 }
+//all filter
 function allFilterElements(){
-  const allElements = inputItems.querySelectorAll("div")
-  allElements.forEach(element => element.classList.toggle("hidden"))
+  defaultElementClasslist()
+  defaultFilterColors()
   allFilter.classList.toggle("text-brightBlue")
 }
 allFilterElements()
+//active filter
+function activeFilterElements(){
+  defaultElementClasslist()
+  const completedElements = inputItems.querySelectorAll("[data-completed]")
+  completedElements.forEach(element=>{
+    element.classList.add("hidden")
+  })
+
+  defaultFilterColors()
+  activeFilter.classList.toggle("text-brightBlue")
+}
+//completedFilterElements
+function completedFilterElements(){
+  defaultElementClasslist()
+  const activeElements = inputItems.querySelectorAll("[data-active]")
+  activeElements.forEach(e => e.classList.add("hidden"))
+  defaultFilterColors()
+  completedFilter.classList.add("text-brightBlue")
+}
+function defaultFilterColors(){
+  allFilter.classList.remove("text-brightBlue")
+  activeFilter.classList.remove("text-brightBlue")
+  completedFilter.classList.remove("text-brightBlue")
+}
+function defaultElementClasslist(){
+  const allElements = inputItems.querySelectorAll("div")
+  allElements.forEach(element=> element.classList.remove("hidden"))
+}
 //local storage

@@ -17,12 +17,15 @@
       .bla::before {
         content: "";
         position: absolute;
-        margin-top: 8px;
+        margin-top: 13px;
         left: 8px;
         width: 22px;
         height: 22px;
         border-radius: 50%;
         outline: hsl(233, 11%, 84%) solid 1px;
+      }
+      input:focus{
+        outline: none!important
       }
     </style>
 
@@ -33,8 +36,8 @@
       <div class="bg-image"></div>
 
       <div class="self-center z-10 relative md:w-[70%] sm:w-[80%] w-[90%] lg:w-[40%]">
-        <div class="flex justify-between mt-8 mb-4 items-center">
-          <h1 class="text-5xl uppercase text-white">Todo</h1>
+        <div class="flex justify-between mt-16 mb-8 items-center">
+          <h1 class="text-5xl uppercase text-light-veryLightGray">Todo</h1>
           <img
             src="images/icon-moon.svg"
             alt="moon"
@@ -49,41 +52,43 @@
             name="input"
             id="input"
             placeholder="create a new todo..."
-            class="w-[100%] h-10 rounded-md pl-10 text-lg text-light-veryDarkGrayishBlue"
+            class="w-[100%] dark:bg-dark-veryDarkDesaturatedBlue h-12 rounded-md 
+            pl-10 text-lg text-light-veryDarkGrayishBlue dark:text-dark-lightGrayishBlue"
           />
         </div>
-        <div class="rounded mt-4 bg-light-veryLightGray" data-text>
+        <div class="rounded-md mt-4 bg-light-veryLightGray">
           <!--input items-->
-          <div class="input-items"></div>
+          <div class="input-items dark:bg-dark-veryDarkDesaturatedBlue 
+          dark:text-dark-lightGrayishBlue dark:hover:text-dark-lightGrayishBlueHover"></div>
           <div
             class="filter-elements"
           >
             <div class="">
-              <span id="items-number">n</span> items left
+              <span id="items-number"></span> items left
             </div>
             <div class="flex gap-4 cursor-pointer">
               <div
                 data-all-filter
-                class="hover:text-light-veryDarkGrayishBlue "
+                class="hover:text-light-veryDarkGrayishBlue hover:dark:text-dark-lightGrayishBlueHover"
               >
                 All
               </div>
               <div
                 data-active-filter
-                class=" hover:text-light-veryDarkGrayishBlue"
+                class=" hover:text-light-veryDarkGrayishBlue hover:dark:text-dark-lightGrayishBlueHover"
               >
               Active
               </div>
               <div
                 data-completed-filter
-                class="hover:text-light-veryDarkGrayishBlue"
+                class="hover:text-light-veryDarkGrayishBlue hover:dark:text-dark-lightGrayishBlueHover"
               >
                 Completed
               </div>
             </div>
             <div
               data-clear-completed
-              class="hover:text-light-veryDarkGrayishBlue cursor-pointer"
+              class="hover:text-light-veryDarkGrayishBlue cursor-pointer hover:dark:text-dark-lightGrayishBlueHover"
             >
               Clear Completed
             </div>
@@ -92,7 +97,7 @@
         <!--wrapper-->
       </div>
 
-      <footer class="self-center absolute  bottom-4">
+      <footer class="self-center absolute dark:text-dark-lightGrayishBlue text-light-veryDarkGrayishBlue bottom-4">
         Challenge by
         <a
           href="https://www.frontendmentor.io?ref=challenge"

@@ -15,25 +15,28 @@ html {
         w-[100%] z-0 absolute bg-center bg-cover;
   }
   .logo {
-    @apply w-8 h-7;
+    @apply w-8 h-7 cursor-pointer;
   }
   .checkbox {
     @apply rounded-full w-6 h-6 cursor-pointer justify-center border 
         hover:border-t-gradientStart hover:border-l-gradientStart 
         hover:border-b-gradientEnd hover:border-r-gradientEnd 
         overflow-hidden from-gradientStart to-gradientEnd flex items-center 
-        transition-colors border-light-lightGrayishBlue;
+        transition-colors border-light-lightGrayishBlue
   }
   .checked {
-    @apply line-through decoration-light-darkGrayishBlue text-light-lightGrayishBlue;
+    @apply line-through decoration-light-darkGrayishBlue text-light-lightGrayishBlue
+      dark:text-dark-veryDarkGrayishBlueOne dark:decoration-dark-veryDarkGrayishBlueTwo
   }
-  .main {
+  .main { 
     @apply font-main flex flex-col bg-light-veryLightGray items-center 
     dark:bg-dark-veryDarkBlue h-full;
   }
   .filter-elements{
-    @apply flex justify-between border-t text-light-darkGrayishBlue border-light-veryDarkGrayishBlue 
-    h-8 items-center px-2 lg:text-sm text-xs
+    @apply flex justify-between border-t text-light-darkGrayishBlue 
+    dark:text-dark-darkGrayishBlue dark:bg-dark-veryDarkDesaturatedBlue
+    dark:border-dark-darkGrayishBlue border-light-veryDarkGrayishBlue 
+    h-10 items-center px-2 lg:text-sm text-xs shadow-md
   }
   .cross-hover{
     @apply hover:scale-110 transition duration-150 ease-out
