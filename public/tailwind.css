@@ -475,6 +475,64 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+.\!container{
+  width: 100% !important;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+
+  .\!container{
+    max-width: 640px !important;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+
+  .\!container{
+    max-width: 768px !important;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+
+  .\!container{
+    max-width: 1024px !important;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+
+  .\!container{
+    max-width: 1280px !important;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+
+  .\!container{
+    max-width: 1536px !important;
+  }
+}
+
 .bg-image{
   position: absolute;
   z-index: 0;
@@ -695,6 +753,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: hsl(0 0% 98% / var(--tw-bg-opacity));
 }
 
+.bg-red-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-br{
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -742,6 +805,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: hsl(236 9% 61% / var(--tw-text-opacity));
 }
 
+.text-brightBlue{
+  --tw-text-opacity: 1;
+  color: hsl(220 98% 61% / var(--tw-text-opacity));
+}
+
 .no-underline{
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
@@ -760,6 +828,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:text-light-veryDarkGrayishBlue:hover{
   --tw-text-opacity: 1;
   color: hsl(235 19% 35% / var(--tw-text-opacity));
+}
+
+.active\:text-brightBlue:active{
+  --tw-text-opacity: 1;
+  color: hsl(220 98% 61% / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px){

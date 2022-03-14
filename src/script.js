@@ -3,6 +3,11 @@ const lightBtn = document.querySelector("[data-sun]");
 const body = document.body;
 const input = document.querySelector("#input");
 const inputItems = document.querySelector(".input-items");
+const clearCompleted = document.querySelector("[data-clear-completed]")
+
+const allFilter = document.querySelector("[data-all-filter]")
+const activeFilter = document.querySelector("[data-active-filter]")
+const completedFilter = document.querySelector("[data-completed-filter]")
 let itemsNumber = document.querySelector("#items-number")
 
 itemsNumber.textContent = 0 
@@ -10,7 +15,7 @@ itemsNumber.textContent = 0
 // Event listeners
 lightBtn.addEventListener("click", themeToggle);
 darkBtn.addEventListener("click", themeToggle);
-
+allFilter.addEventListener("click",allFilterElements)
 input.addEventListener("keyup", addItem);
 
 function addItem(event) {
@@ -52,12 +57,13 @@ function addItem(event) {
       itemsNumber.textContent--
     })
     itemsNumber.textContent = inputItems.children.length
-    
-    
+    //completedElements
+    //eventListener
+    clearCompleted.addEventListener('click',clearCompletedElements)
+    // filters' event listener  
 
     clear()
   }
-
 }
 
 //functions
@@ -76,15 +82,33 @@ function itemChecked(e){
   const txt = elementContainer.querySelector("p")
   const checkbox = elementContainer.querySelector(".checkbox");
   //adding class to find out which element was completed
-  elementContainer.parentElement.parentElement.classList.toggle("completed")
+  let container = elementContainer.parentElement.parentElement
+  //sets data attribute to all todos that are completed
+  if(!container.dataset.completed){
+    container.setAttribute("data-completed",'completed')
+  }else{
+    container.removeAttribute("data-completed")
+  }
   checkbox.classList.toggle("bg-gradient-to-br")
   tick.classList.toggle("hidden")
   txt.classList.toggle("checked")
   
-  if(elementContainer.parentElement.parentElement.classList.contains("completed")){
+  if(container.dataset.completed === "completed"){
     itemsNumber.textContent--
   }else{
     itemsNumber.textContent++
   }
 }
+function clearCompletedElements(){
+  const completedElements = inputItems.querySelectorAll("[data-completed]")
+  completedElements.forEach(element=>{
+    inputItems.removeChild(element)
+  })
+}
+function allFilterElements(){
+  const allElements = inputItems.querySelectorAll("div")
+  allElements.forEach(element => element.classList.toggle("hidden"))
+  allFilter.classList.toggle("text-brightBlue")
+}
+allFilterElements()
 //local storage
