@@ -11,9 +11,9 @@ html {
 
 @layer components {
   .bg-image {
-    @apply md:bg-lightBig md:dark:bg-darkBig bg-lightSmall bg-no-repeat dark:bg-darkSmall h-60
+    @apply md:bg-lightBig md:dark:bg-darkBig bg-lightSmall bg-no-repeat dark:bg-darkSmall h-72 
         w-[100%] z-0 absolute bg-center bg-cover;
-  }
+  } 
   .logo {
     @apply w-8 h-7 cursor-pointer;
   }
@@ -26,7 +26,7 @@ html {
   }
   .checked {
     @apply line-through decoration-light-darkGrayishBlue text-light-lightGrayishBlue
-      dark:text-dark-veryDarkGrayishBlueOne dark:decoration-dark-veryDarkGrayishBlueTwo
+      dark:decoration-dark-veryDarkGrayishBlueOne dark:text-dark-veryDarkGrayishBlueTwo
   }
   .main { 
     @apply font-main flex flex-col bg-light-veryLightGray items-center 

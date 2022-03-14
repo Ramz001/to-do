@@ -536,7 +536,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-image{
   position: absolute;
   z-index: 0;
-  height: 15rem;
+  height: 18rem;
   width: 100%;
   background-image: url('/images/bg-mobile-light.jpg');
   background-size: cover;
@@ -605,9 +605,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .dark .checked{
   --tw-text-opacity: 1;
-  color: hsl(233 14% 35% / var(--tw-text-opacity));
-  -webkit-text-decoration-color: hsl(237, 14%, 26%);
-          text-decoration-color: hsl(237, 14%, 26%);
+  color: hsl(237 14% 26% / var(--tw-text-opacity));
+  -webkit-text-decoration-color: hsl(233, 14%, 35%);
+          text-decoration-color: hsl(233, 14%, 35%);
 }
 
 .main{
@@ -681,16 +681,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 0.25rem;
 }
 
-.mt-16{
-  margin-top: 4rem;
+.mt-20{
+  margin-top: 5rem;
 }
 
 .mb-8{
   margin-bottom: 2rem;
 }
 
-.mt-4{
-  margin-top: 1rem;
+.mt-5{
+  margin-top: 1.25rem;
 }
 
 .flex{
@@ -703,10 +703,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-12{
   height: 3rem;
-}
-
-.h-16{
-  height: 4rem;
 }
 
 .h-2{
@@ -882,10 +878,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 1024px){
-  .lg\:h-16{
-    height: 4rem;
-  }
-
   .lg\:w-\[40\%\]{
     width: 40%;
   }
