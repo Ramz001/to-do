@@ -538,23 +538,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 0;
   height: 18rem;
   width: 100%;
-  background-image: url('images/bg-mobile-light.jpg');
+  background-image: url('/images/bg-mobile-light.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .dark .bg-image{
-  background-image: url('images/bg-mobile-dark.jpg');
+  background-image: url('/images/bg-mobile-dark.jpg');
 }
 
 @media (min-width: 768px){
   .bg-image{
-    background-image: url('images/bg-desktop-light.jpg');
+    background-image: url('../images/bg-desktop-light.jpg');
   }
 
   .dark .bg-image{
-    background-image: url('images/bg-desktop-dark.jpg');
+    background-image: url('/images/bg-desktop-dark.jpg');
   }
 }
 
