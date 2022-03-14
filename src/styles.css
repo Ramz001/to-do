@@ -11,7 +11,7 @@ html {
 
 @layer components {
   .bg-image {
-    @apply md:bg-lightBig md:dark:bg-darkBig bg-lightSmall bg-no-repeat dark:bg-darkSmall h-72 
+    @apply md:bg-lightBig md:dark:bg-darkBig bg-lightSmall bg-no-repeat dark:bg-darkSmall h-72  
         w-[100%] z-0 absolute bg-center bg-cover;
   } 
   .logo {
