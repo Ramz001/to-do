@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
-
     <link
       rel="icon"
       type="image/png"
@@ -14,34 +13,34 @@
     />
     <link rel="stylesheet" href="/public/tailwind.css" />
 
-
-<style>
-.bla::before{
-  content: "";
-  position: absolute;
-  margin-top: 8px;
-  left: 8px;  
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  outline:  hsl(233, 11%, 84%) solid 1px;
-}
-
-</style>
-
+    <style>
+      .bla::before {
+        content: "";
+        position: absolute;
+        margin-top: 8px;
+        left: 8px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        outline: hsl(233, 11%, 84%) solid 1px;
+      }
+    </style>
 
     <title>Todo app</title>
   </head>
   <body class="transition-all">
-    <main
-      class="font-main flex flex-col bg-light-veryLightGray items-center dark:bg-dark-veryDarkBlue h-full"
-    >
+    <main class="main">
       <div class="bg-image"></div>
 
-      <div class="self-center z-10 relative w-[40%]">
+      <div class="self-center z-10 relative md:w-[70%] sm:w-[80%] w-[90%] lg:w-[40%]">
         <div class="flex justify-between mt-8 mb-4 items-center">
           <h1 class="text-5xl uppercase text-white">Todo</h1>
-          <img src="images/icon-moon.svg" alt="moon" data-moon class="hidden logo" />
+          <img
+            src="images/icon-moon.svg"
+            alt="moon"
+            data-moon
+            class="hidden logo"
+          />
           <img src="images/icon-sun.svg" alt="sun" data-sun class="logo" />
         </div>
         <div class="bla">
@@ -55,24 +54,45 @@
         </div>
         <div class="rounded mt-4 bg-light-veryLightGray" data-text>
           <!--input items-->
+          <div class="input-items"></div>
           <div
-            class="flex justify-between border-t text-light-darkGrayishBlue border-light-veryDarkGrayishBlue h-8 items-center px-2"
+            class="filter-elements"
           >
-            <div class="text-sm">
+            <div class="">
               <span id="items-number">n</span> items left
             </div>
-            <div class="flex gap-4  cursor-pointer">
-              <div data-all class="text-sm hover:text-light-veryDarkGrayishBlue">All</div>
-              <div data-active class="text-sm hover:text-light-veryDarkGrayishBlue">Active</div>
-              <div data-completed class="text-sm hover:text-light-veryDarkGrayishBlue">Completed</div>
+            <div class="flex gap-4 cursor-pointer">
+              <div
+                data-all
+                class="hover:text-light-veryDarkGrayishBlue"
+              >
+                All
+              </div>
+              <div
+                data-active
+                class=" hover:text-light-veryDarkGrayishBlue"
+              >
+              Active
+              </div>
+              <div
+                
+                class="hover:text-light-veryDarkGrayishBlue"
+              >
+                Completed
+              </div>
             </div>
-            <div data-clear-completed class="text-sm hover:text-light-veryDarkGrayishBlue cursor-pointer">Clear Completed</div>
+            <div
+              data-clear-completed
+              class="hover:text-light-veryDarkGrayishBlue cursor-pointer"
+            >
+              Clear Completed
+            </div>
           </div>
         </div>
         <!--wrapper-->
       </div>
 
-      <footer class="attribution">
+      <footer class="self-center absolute  bottom-4">
         Challenge by
         <a
           href="https://www.frontendmentor.io?ref=challenge"

@@ -1,29 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
-body,html{
-    height: 100%;
+body,
+html {
+  height: 100%;
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-    .bg-image{
-        @apply md:bg-lightBig md:dark:bg-darkBig bg-lightSmall bg-no-repeat dark:bg-darkSmall h-60
-        w-[100%] z-0 absolute bg-center bg-cover
-    }
-    .logo{
-        @apply w-8 h-7 
-    }
-    .checkbox{
-        @apply rounded-full w-6 h-6 cursor-pointer justify-center border 
+@layer components {
+  .bg-image {
+    @apply md:bg-lightBig md:dark:bg-darkBig bg-lightSmall bg-no-repeat dark:bg-darkSmall h-60
+        w-[100%] z-0 absolute bg-center bg-cover;
+  }
+  .logo {
+    @apply w-8 h-7;
+  }
+  .checkbox {
+    @apply rounded-full w-6 h-6 cursor-pointer justify-center border 
         hover:border-t-gradientStart hover:border-l-gradientStart 
         hover:border-b-gradientEnd hover:border-r-gradientEnd 
         overflow-hidden from-gradientStart to-gradientEnd flex items-center 
-        transition-colors border-light-lightGrayishBlue
-    }
-    .checked{
-        @apply line-through decoration-light-darkGrayishBlue text-light-lightGrayishBlue
-    }
+        transition-colors border-light-lightGrayishBlue;
+  }
+  .checked {
+    @apply line-through decoration-light-darkGrayishBlue text-light-lightGrayishBlue;
+  }
+  .main {
+    @apply font-main flex flex-col bg-light-veryLightGray items-center 
+    dark:bg-dark-veryDarkBlue h-full;
+  }
+  .filter-elements{
+    @apply flex justify-between border-t text-light-darkGrayishBlue border-light-veryDarkGrayishBlue 
+    h-8 items-center px-2 lg:text-sm text-xs
+  }
+  .cross-hover{
+    @apply hover:scale-110 transition duration-150 ease-out
+  }
 }

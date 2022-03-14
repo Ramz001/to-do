@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
-body,html{
+body,
+html {
   height: 100%;
 }
 
@@ -543,8 +544,69 @@ Ensure the default browser behavior of the `hidden` attribute.
           text-decoration-color: hsl(236, 9%, 61%);
 }
 
+.main{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  --tw-bg-opacity: 1;
+  background-color: hsl(0 0% 98% / var(--tw-bg-opacity));
+  font-family: "Josefin Sans";
+}
+
+.dark .main{
+  --tw-bg-opacity: 1;
+  background-color: hsl(235 21% 11% / var(--tw-bg-opacity));
+}
+
+.filter-elements{
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: hsl(235 19% 35% / var(--tw-border-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --tw-text-opacity: 1;
+  color: hsl(236 9% 61% / var(--tw-text-opacity));
+}
+
+@media (min-width: 1024px){
+  .filter-elements{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+.cross-hover{
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cross-hover:hover{
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.absolute{
+  position: absolute;
+}
+
 .relative{
   position: relative;
+}
+
+.bottom-4{
+  bottom: 1rem;
 }
 
 .z-10{
@@ -576,10 +638,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.h-full{
-  height: 100%;
-}
-
 .h-10{
   height: 2.5rem;
 }
@@ -588,12 +646,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 0.5rem;
 }
 
-.h-8{
-  height: 2rem;
-}
-
-.w-\[40\%\]{
-  width: 40%;
+.w-\[90\%\]{
+  width: 90%;
 }
 
 .w-\[100\%\]{
@@ -606,10 +660,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .cursor-pointer{
   cursor: pointer;
-}
-
-.flex-col{
-  flex-direction: column;
 }
 
 .items-end{
@@ -640,18 +690,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.25rem;
 }
 
-.border-t{
-  border-top-width: 1px;
-}
-
-.border-light-veryDarkGrayishBlue{
-  --tw-border-opacity: 1;
-  border-color: hsl(235 19% 35% / var(--tw-border-opacity));
-}
-
 .bg-light-veryLightGray{
   --tw-bg-opacity: 1;
   background-color: hsl(0 0% 98% / var(--tw-bg-opacity));
+}
+
+.bg-gradient-to-br{
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
 .px-2{
@@ -663,10 +708,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 2.5rem;
 }
 
-.font-main{
-  font-family: "Josefin Sans";
-}
-
 .text-5xl{
   font-size: 3rem;
   line-height: 1;
@@ -675,11 +716,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-lg{
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.text-sm{
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 .uppercase{
@@ -696,29 +732,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: hsl(235 19% 35% / var(--tw-text-opacity));
 }
 
-.text-light-darkGrayishBlue{
-  --tw-text-opacity: 1;
-  color: hsl(236 9% 61% / var(--tw-text-opacity));
-}
-
 .text-blue-600{
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
-.line-through{
-  -webkit-text-decoration-line: line-through;
-          text-decoration-line: line-through;
+.text-light-darkGrayishBlue{
+  --tw-text-opacity: 1;
+  color: hsl(236 9% 61% / var(--tw-text-opacity));
 }
 
 .no-underline{
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
-}
-
-.decoration-light-darkGrayishBlue{
-  -webkit-text-decoration-color: hsl(236, 9%, 61%);
-          text-decoration-color: hsl(236, 9%, 61%);
 }
 
 .outline{
@@ -736,7 +762,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: hsl(235 19% 35% / var(--tw-text-opacity));
 }
 
-.dark .dark\:bg-dark-veryDarkBlue{
-  --tw-bg-opacity: 1;
-  background-color: hsl(235 21% 11% / var(--tw-bg-opacity));
+@media (min-width: 640px){
+  .sm\:w-\[80\%\]{
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px){
+  .md\:w-\[70\%\]{
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px){
+  .lg\:w-\[40\%\]{
+    width: 40%;
+  }
 }
