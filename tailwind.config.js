@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage:{
-        lightBig: "url('./images/bg-desktop-light.jpg')",
-        darkBig: "url('./images/bg-desktop-dark.jpg')",
-        lightSmall: "url('./images/bg-mobile-light.jpg')",
-        darkSmall: "url('./images/bg-mobile-dark.jpg')"
+        lightBig: "url('/images/bg-desktop-light.jpg')",
+        darkBig: "url('/images/bg-desktop-dark.jpg')",
+        lightSmall: "url('/images/bg-mobile-light.jpg')",
+        darkSmall: "url('/images/bg-mobile-dark.jpg')"
       },
       fontFamily:{
         main : ['"Josefin Sans"']
