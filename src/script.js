@@ -31,7 +31,7 @@ function addItem(event) {
           text-light-veryDarkGrayishBlue">
             <div id="completed" class="checkbox">
                 <img
-                src="../images/icon-check.svg"
+                src="images/icon-check.svg"
                 alt="logo"
                 id="tick"
                 class="w-3 hidden h-2 mx-1"
@@ -40,8 +40,8 @@ function addItem(event) {
             <p class="">${value}</p>
           </div>
           <img
-          src="../images/icon-cross.svg"
-          alt="img"
+          src="images/icon-cross.svg"
+          alt="logo"
           id="cross"
           class="flex items-end cursor-pointer"
           />
