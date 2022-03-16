@@ -11,7 +11,7 @@ html {
  
 @layer components {
   .bg-image {
-    @apply md:bg-lightBig md:dark:bg-darkBig bg-lightSmall bg-no-repeat dark:bg-darkSmall h-72  
+    @apply md:bg-lightBig md:dark:bg-darkBig bg-lightSmall bg-no-repeat dark:bg-darkSmall h-[45%]  
         w-[100%] z-0 absolute bg-center bg-cover;
   } 
   .logo {
@@ -36,7 +36,7 @@ html {
     @apply flex justify-between border-t text-light-darkGrayishBlue 
     dark:text-dark-darkGrayishBlue dark:bg-dark-veryDarkDesaturatedBlue
     dark:border-dark-darkGrayishBlue border-light-veryDarkGrayishBlue 
-    h-10 items-center px-2 lg:text-sm text-xs shadow-md
+    h-12 items-center px-3 lg:text-sm text-xs shadow-md rounded-sm
   }
   .cross-hover{
     @apply hover:scale-110 transition duration-150 ease-out

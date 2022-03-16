@@ -26,7 +26,7 @@ function addItem(event) {
   if (event.keyCode === 13) {
     const element = document.createElement("div");
     element.innerHTML = `
-        <div data-todo class="h-12 flex items-center px-2 justify-between shadow-md rounded-md">
+        <div data-todo class="h-16 flex items-center px-3 justify-between shadow-md rounded-md text-lg">
           <div class="flex gap-4 dark:text-dark-lightGrayishBlue
           text-light-veryDarkGrayishBlue">
             <div id="completed" class="checkbox">
